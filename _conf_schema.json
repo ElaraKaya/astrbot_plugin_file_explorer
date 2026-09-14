@@ -1,0 +1,32 @@
+{
+  "allowed_roots": {
+    "description": "额外允许访问的根目录",
+    "type": "list",
+    "hint": "填写绝对路径。留空则只能访问 AstrBot 数据目录（data/）及其子目录。",
+    "default": []
+  },
+  "allow_system_root": {
+    "description": "允许浏览整个文件系统（危险）",
+    "type": "bool",
+    "hint": "开启后可从盘符或系统根目录浏览。仅建议在本机、受信任环境使用。",
+    "default": false
+  },
+  "show_hidden": {
+    "description": "显示隐藏文件",
+    "type": "bool",
+    "hint": "显示以 . 开头的文件和目录。",
+    "default": true
+  },
+  "max_upload_mb": {
+    "description": "单文件上传大小上限（MB）",
+    "type": "int",
+    "hint": "同时受 AstrBot Dashboard 最大请求体限制（默认 128MB）。",
+    "default": 128
+  },
+  "max_preview_kb": {
+    "description": "在线预览大小上限（KB）",
+    "type": "int",
+    "hint": "超过该大小的文本文件请下载后查看。图片预览不受此限制。",
+    "default": 512
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>文件管理器</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">FS</span>
+          <div class="brand-text">
+            <strong>文件管理器</strong>
+            <span>File Explorer</span>
+          </div>
+        </div>
+        <div class="sidebar-label">快捷目录</div>
+        <nav id="root-list" class="root-list"></nav>
+        <div class="sidebar-footer">
+          <button type="button" class="ghost-btn" id="theme-btn">切换主题</button>
+        </div>
+      </aside>
+
+      <section class="main">
+        <header class="toolbar">
+          <div class="nav-btns">
+            <button type="button" class="icon-btn" id="btn-up" title="上级目录">↑</button>
+            <button type="button" class="icon-btn" id="btn-refresh" title="刷新">↻</button>
+          </div>
+          <div class="crumbs" id="crumbs"></div>
+          <input class="search" id="search" type="search" placeholder="筛选当前目录" />
+        </header>
+
+        <div class="actions">
+          <button type="button" class="btn" id="btn-upload">上传</button>
+          <button type="button" class="btn" id="btn-mkdir">新建文件夹</button>
+          <button type="button" class="btn" id="btn-newfile">新建文件</button>
+          <button type="button" class="btn" id="btn-download">下载</button>
+          <button type="button" class="btn" id="btn-rename">重命名</button>
+          <button type="button" class="btn" id="btn-copy">复制</button>
+          <button type="button" class="btn" id="btn-cut">剪切</button>
+          <button type="button" class="btn" id="btn-paste">粘贴</button>
+          <button type="button" class="btn danger" id="btn-delete">删除</button>
+          <input id="file-input" type="file" multiple hidden />
+        </div>
+
+        <div class="table-wrap" id="dropzone">
+          <table class="file-table">
+            <thead>
+              <tr>
+                <th class="col-check"><input type="checkbox" id="check-all" /></th>
+                <th class="col-name">名称</th>
+                <th class="col-size">大小</th>
+                <th class="col-time">修改时间</th>
+              </tr>
+            </thead>
+            <tbody id="file-body"></tbody>
+          </table>
+          <div class="empty" id="empty-hint" hidden>此目录为空</div>
+        </div>
+
+        <footer class="statusbar">
+          <span id="status-count">0 项</span>
+          <span id="status-sel"></span>
+          <span id="status-path" class="status-path"></span>
+          <span id="status-disk"></span>
+        </footer>
+      </section>
+
+      <aside class="preview" id="preview" hidden>
+        <div class="preview-head">
+          <strong id="preview-title">预览</strong>
+          <button type="button" class="icon-btn" id="preview-close">×</button>
+        </div>
+        <div class="preview-body" id="preview-body"></div>
+        <div class="preview-actions" id="preview-actions" hidden>
+          <button type="button" class="btn" id="btn-save">保存</button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+    <div class="modal" id="modal" hidden>
+      <div class="modal-card">
+        <h3 id="modal-title">提示</h3>
+        <p id="modal-desc"></p>
+        <input id="modal-input" type="text" hidden />
+        <div class="modal-actions">
+          <button type="button" class="btn" id="modal-cancel">取消</button>
+          <button type="button" class="btn primary" id="modal-ok">确定</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

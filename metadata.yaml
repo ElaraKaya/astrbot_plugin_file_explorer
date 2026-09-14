@@ -1,0 +1,15 @@
+name: astrbot_plugin_file_explorer
+display_name: 文件管理器
+short_desc: 在 AstrBot WebUI 里浏览和管理本地文件
+desc: >
+  在 AstrBot WebUI 中提供类似 NapCat 的可视化文件管理器。
+  支持目录浏览、上传下载、新建、重命名、复制移动、删除，以及文本/图片预览。
+  默认限制在 AstrBot 数据目录内，可按需放开额外根目录。
+version: 1.0.1
+author: Elara
+repo: https://github.com/ElaraKaya/astrbot_plugin_file_explorer
+social_link: https://github.com/ElaraKaya
+tags:
+  - 文件管理
+  - WebUI
+  - 工具
